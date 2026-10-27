@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accessibility dashboard</title>
+<style>
+:root{--bg:#eef2f5;--panel:#fff;--ink:#14202b;--muted:#46535f;--line:#cbd5dd;--ok:#1f6b3a;--bad:#a3201a}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,sans-serif}
+main{max-width:56rem;margin:0 auto;padding:2rem 1.25rem 4rem}
+h1{font:700 2rem/1.15 Georgia,'Times New Roman',serif;margin:0 0 .25rem}
+h2{font:700 1.2rem Georgia,serif;margin:2.5rem 0 .75rem}
+.meta{color:var(--muted);margin:0 0 1.5rem}
+.status{padding:1rem 1.25rem;border-left:6px solid var(--ok);background:var(--panel);font-size:1.1rem}
+.status.fail{border-color:var(--bad)}
+.panel{background:var(--panel);border:1px solid var(--line);padding:1rem;overflow-x:auto}
+.chart{width:100%;height:auto}.grid{stroke:var(--line)}.axis{font-size:11px;fill:var(--muted)}
+.legend{display:flex;gap:1.25rem;flex-wrap:wrap;list-style:none;padding:0;margin:.5rem 0 0}.legend li{display:flex;gap:.4rem;align-items:center}
+table{width:100%;border-collapse:collapse;background:var(--panel)}th,td{padding:.5rem .75rem;border-bottom:1px solid var(--line);text-align:left}
+.num{text-align:right;font-variant-numeric:tabular-nums}.bad{color:var(--bad);font-weight:700}
+.sr{position:absolute;left:-9999px}
+details{background:var(--panel);border:1px solid var(--line);margin-bottom:.5rem;padding:.6rem .9rem}summary{cursor:pointer}
+summary:focus-visible,a:focus-visible{outline:3px solid #1a5fb4;outline-offset:2px}
+.pill{display:inline-block;padding:0 .5rem;border-radius:3px;color:#fff;font-size:.85rem;margin-right:.4rem}
+.pill.critical{background:#a3201a}.pill.serious{background:#c2570c}.pill.moderate{background:#6f5600}.pill.minor{background:#2f6f8f}
+.where{color:var(--muted);font-size:.9rem}pre{white-space:pre-wrap;word-break:break-all;background:#f3f5f7;padding:.4rem;margin:.25rem 0 .75rem;font-size:.85rem}
+.ok{color:var(--ok);font-weight:600}a{color:#0b4f9c}
+.note{color:var(--muted);max-width:42rem}
+</style></head><body><main>
+<h1>Accessibility dashboard</h1>
+<p class="meta">Latest run 2026-10-27 15:03 UTC · commit <code>ccc3333</code> · local</p>
+<p class="status fail" role="status">Build fails: 4 critical or serious violations. 0 lower-impact issues recorded.</p>
+<h2>Violations over time</h2>
+<div class="panel"><svg viewBox="0 0 760 260" role="img" aria-labelledby="ct ct-d" class="chart"><title id="ct">Violations over time</title><desc id="ct-d">Line chart of affected elements per impact level across 3 recorded runs. The data table below has the same numbers.</desc><line x1="44" x2="744" y1="220" y2="220" class="grid"/><text x="36" y="224" text-anchor="end" class="axis">0</text><line x1="44" x2="744" y1="118" y2="118" class="grid"/><text x="36" y="122" text-anchor="end" class="axis">1</text><line x1="44" x2="744" y1="118" y2="118" class="grid"/><text x="36" y="122" text-anchor="end" class="axis">1</text><line x1="44" x2="744" y1="16" y2="16" class="grid"/><text x="36" y="20" text-anchor="end" class="axis">2</text><line x1="44" x2="744" y1="16" y2="16" class="grid"/><text x="36" y="20" text-anchor="end" class="axis">2</text><text x="44" y="242" text-anchor="middle" class="axis">aaa1111</text><text x="394" y="242" text-anchor="middle" class="axis">bbb2222</text><text x="744" y="242" text-anchor="middle" class="axis">ccc3333</text><polyline points="44,16 394,220 744,16" fill="none" stroke="#a3201a" stroke-width="2.5" stroke-dasharray=""/><circle cx="44" cy="16" r="3.5" fill="#a3201a"/><circle cx="394" cy="220" r="3.5" fill="#a3201a"/><circle cx="744" cy="16" r="3.5" fill="#a3201a"/><polyline points="44,16 394,220 744,16" fill="none" stroke="#c2570c" stroke-width="2.5" stroke-dasharray="8 4"/><circle cx="44" cy="16" r="3.5" fill="#c2570c"/><circle cx="394" cy="220" r="3.5" fill="#c2570c"/><circle cx="744" cy="16" r="3.5" fill="#c2570c"/><polyline points="44,220 394,220 744,220" fill="none" stroke="#8a6a00" stroke-width="2.5" stroke-dasharray="2 4"/><circle cx="44" cy="220" r="3.5" fill="#8a6a00"/><circle cx="394" cy="220" r="3.5" fill="#8a6a00"/><circle cx="744" cy="220" r="3.5" fill="#8a6a00"/><polyline points="44,220 394,220 744,220" fill="none" stroke="#2f6f8f" stroke-width="2.5" stroke-dasharray="10 3 2 3"/><circle cx="44" cy="220" r="3.5" fill="#2f6f8f"/><circle cx="394" cy="220" r="3.5" fill="#2f6f8f"/><circle cx="744" cy="220" r="3.5" fill="#2f6f8f"/></svg><ul class="legend"><li><svg width="34" height="10" aria-hidden="true"><line x1="0" x2="34" y1="5" y2="5" stroke="#a3201a" stroke-width="3" stroke-dasharray=""/></svg>critical</li><li><svg width="34" height="10" aria-hidden="true"><line x1="0" x2="34" y1="5" y2="5" stroke="#c2570c" stroke-width="3" stroke-dasharray="8 4"/></svg>serious</li><li><svg width="34" height="10" aria-hidden="true"><line x1="0" x2="34" y1="5" y2="5" stroke="#8a6a00" stroke-width="3" stroke-dasharray="2 4"/></svg>moderate</li><li><svg width="34" height="10" aria-hidden="true"><line x1="0" x2="34" y1="5" y2="5" stroke="#2f6f8f" stroke-width="3" stroke-dasharray="10 3 2 3"/></svg>minor</li></ul></div>
+<h2>Recorded runs</h2><table><caption class="sr">Recorded runs, newest first</caption><thead><tr><th scope="col">When (UTC)</th><th scope="col">Commit</th><th scope="col">Branch</th><th scope="col" class="num">critical</th><th scope="col" class="num">serious</th><th scope="col" class="num">moderate</th><th scope="col" class="num">minor</th></tr></thead><tbody><tr><td>2026-10-27 15:03</td><td><code>ccc3333</code></td><td>local</td><td class="num">2</td><td class="num">2</td><td class="num">0</td><td class="num">0</td></tr><tr><td>2026-10-27 15:03</td><td><code>bbb2222</code></td><td>local</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr><tr><td>2026-10-27 15:03</td><td><code>aaa1111</code></td><td>local</td><td class="num">2</td><td class="num">2</td><td class="num">0</td><td class="num">0</td></tr></tbody></table>
+<h2>Latest run by page</h2><table><caption class="sr">Latest run by page</caption><thead><tr><th scope="col">Page</th><th scope="col" class="num">critical</th><th scope="col" class="num">serious</th><th scope="col" class="num">moderate</th><th scope="col" class="num">minor</th></tr></thead><tbody><tr><th scope="row">Broken demo <code>/broken.html</code></th><td class="num bad">2</td><td class="num bad">2</td><td class="num ">0</td><td class="num ">0</td></tr><tr><th scope="row">Contact <code>/contact.html</code></th><td class="num ">0</td><td class="num ">0</td><td class="num ">0</td><td class="num ">0</td></tr><tr><th scope="row">Home <code>/index.html</code></th><td class="num ">0</td><td class="num ">0</td><td class="num ">0</td><td class="num ">0</td></tr><tr><th scope="row">Products <code>/products.html</code></th><td class="num ">0</td><td class="num ">0</td><td class="num ">0</td><td class="num ">0</td></tr></tbody></table>
+<h2>Violation details</h2><details><summary><span class="pill critical">critical</span> Buttons must have discernible text <span class="where">Broken demo, 1 element</span></summary>
+    <p><code>button-name</code> · <a href="https://dequeuniversity.com/rules/axe/4.14/button-name?application=axeAPI">How to fix</a> · wcag2a, wcag412</p>
+    <ul><li><code>button</code><pre>&lt;button&gt;&lt;/button&gt;</pre></li></ul></details><details><summary><span class="pill critical">critical</span> Images must have alternative text <span class="where">Broken demo, 1 element</span></summary>
+    <p><code>image-alt</code> · <a href="https://dequeuniversity.com/rules/axe/4.14/image-alt?application=axeAPI">How to fix</a> · wcag2a, wcag111</p>
+    <ul><li><code>img</code><pre>&lt;img src=&quot;data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; width=&#39;80&#39; height=&#39;50&#39;%3E%3Crect width=&#39;80&#39; height=&#39;50&#39; fill=&#39;%23999&#39;/%3E%3C/svg%3E&quot;&gt;</pre></li></ul></details><details><summary><span class="pill serious">serious</span> &lt;html&gt; element must have a lang attribute <span class="where">Broken demo, 1 element</span></summary>
+    <p><code>html-has-lang</code> · <a href="https://dequeuniversity.com/rules/axe/4.14/html-has-lang?application=axeAPI">How to fix</a> · wcag2a, wcag311</p>
+    <ul><li><code>html</code><pre>&lt;html&gt;</pre></li></ul></details><details><summary><span class="pill serious">serious</span> Links must have discernible text <span class="where">Broken demo, 1 element</span></summary>
+    <p><code>link-name</code> · <a href="https://dequeuniversity.com/rules/axe/4.14/link-name?application=axeAPI">How to fix</a> · wcag2a, wcag244, wcag412</p>
+    <ul><li><code>a</code><pre>&lt;a href=&quot;/products.html&quot;&gt;&lt;/a&gt;</pre></li></ul></details>
+<h2>What this does not cover</h2>
+<p class="note">Automated scans typically find only a fraction of real-world accessibility barriers. Keyboard flow, screen reader output, meaningful alt text, focus management and cognitive load still need manual testing. See the README.</p>
+</main></body></html>

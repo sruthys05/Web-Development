@@ -1,0 +1,19 @@
+{
+  "name": "a11y-ci-pipeline",
+  "version": "1.0.0",
+  "description": "Automated accessibility testing (axe-core + Playwright) with a violations-over-time dashboard",
+  "private": true,
+  "scripts": {
+    "start": "node sample-app/server.js",
+    "test:a11y": "playwright test",
+    "test:a11y:broken": "A11Y_INCLUDE_BROKEN=1 playwright test",
+    "report": "node scripts/build-report.js",
+    "a11y": "playwright test; node scripts/build-report.js",
+    "postinstall": "echo \"Run 'npx playwright install --with-deps chromium' once to fetch the browser.\""
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.0",
+    "@playwright/test": "^1.48.0"
+  },
+  "engines": { "node": ">=18" }
+}

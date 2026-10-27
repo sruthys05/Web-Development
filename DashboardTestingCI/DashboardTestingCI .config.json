@@ -1,0 +1,12 @@
+{
+  "pages": [
+    { "name": "Home", "path": "/" },
+    { "name": "Products", "path": "/products.html" },
+    { "name": "Contact", "path": "/contact.html" }
+  ],
+  "brokenPages": [
+    { "name": "Broken demo", "path": "/broken.html" }
+  ],
+  "tags": ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa", "best-practice"],
+  "failOn": ["serious", "critical"]
+}
