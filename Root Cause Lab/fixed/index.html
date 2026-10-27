@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!-- FIX 01: lang attribute -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!-- FIX 19: zoom allowed -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- FIX 02: descriptive title -->
+<title>Orchard Coffee - Small-batch roasts</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- FIX 03: skip link -->
+<a class="skip" href="#main">Skip to main content</a>
+
+<!-- FIX 13: no aria-hidden on a focusable link -->
+<div class="promo"><a href="#menu">Free shipping over $30 - see deals</a></div>
+
+<header>
+  <!-- FIX 09: meaningful alt -->
+  <img class="logo" src="logo.svg" alt="Orchard Coffee">
+  <!-- FIX 12: plain list of links, no menu roles -->
+  <nav aria-label="Main">
+    <ul class="nav">
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#delivery">Delivery</a></li>
+      <li><a href="#visit">Visit</a></li>
+    </ul>
+  </nav>
+  <!-- FIX 10: accessible name, decorative icon hidden -->
+  <button class="icon-btn" aria-label="Cart"><svg aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24"><path d="M3 4h2l2 11h11l2-8H6" fill="none" stroke="#3b2a1a" stroke-width="2"/></svg></button>
+</header>
+
+<main id="main" tabindex="-1">
+  <section class="hero">
+    <img src="bag.svg" alt="">
+    <div>
+      <h1>Orchard Coffee</h1>
+      <p class="muted">Small-batch roasts, delivered fresh every Tuesday.</p>
+      <button class="btn" id="open-offer">Get 10% off</button>
+    </div>
+  </section>
+
+  <!-- FIX 04: logical heading order, real headings -->
+  <h2 id="menu">Fresh roasts this week</h2>
+  <div class="cards">
+    <div class="card">
+      <h3 class="name">Ember Blend</h3>
+      <p class="muted">Dark roast with cocoa notes - $14</p>
+      <!-- FIX 06: real buttons with unique names -->
+      <button class="btn" data-name="Ember Blend" aria-label="Add Ember Blend to cart">Add to cart</button>
+    </div>
+    <div class="card">
+      <h3 class="name">Meadow Light</h3>
+      <p class="muted">Light roast with citrus notes - $16</p>
+      <button class="btn" data-name="Meadow Light" aria-label="Add Meadow Light to cart">Add to cart</button>
+    </div>
+  </div>
+  <!-- FIX 18: live region announces the message -->
+  <p id="toast" role="status"></p>
+
+  <h2 id="delivery">Delivery</h2>
+  <!-- FIX 17: state and relationship exposed -->
+  <button class="acc" id="acc-btn" aria-expanded="false" aria-controls="acc-body">Delivery details</button>
+  <div id="acc-body" hidden><p>Orders placed before noon ship the same day. Free over $30.</p></div>
+
+  <!-- FIX 16: link text describes the destination -->
+  <p><a href="#visit">Learn where our beans come from</a>.</p>
+
+  <h2>Stay in the loop</h2>
+  <form id="news" novalidate>
+    <!-- FIX 11: visible labels -->
+    <label for="name">Your name</label>
+    <input type="text" id="name" autocomplete="name">
+    <label for="email">Email address</label>
+    <input type="email" id="email" autocomplete="email" aria-describedby="email-err">
+    <!-- FIX 14: error in text, linked to the field -->
+    <p class="error" id="email-err" hidden>Error: enter an email like name@example.com.</p>
+    <button class="btn" type="submit">Subscribe</button>
+  </form>
+</main>
+
+<!-- FIX 15: no positive tabindex -->
+<footer id="visit"><a href="#menu">Contact us</a> | 12 Mill Lane</footer>
+
+<!-- FIX 08: native dialog: Esc closes, focus is managed and restored -->
+<dialog id="offer" aria-labelledby="offer-title">
+  <button class="close" id="close" aria-label="Close offer">&times;</button>
+  <h2 id="offer-title" class="name">10% off your first order</h2>
+  <label for="m-email">Email address</label>
+  <input id="m-email" type="email" autocomplete="email">
+  <button class="btn" type="button" id="claim">Claim offer</button>
+  <p id="m-msg" role="status"></p>
+</dialog>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Page</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="promo" aria-hidden="true"><a href="#menu">Free shipping over $30 - see deals</a></div>
+
+<header>
+  <img class="logo" src="logo.svg">
+  <ul class="nav" role="menu">
+    <li role="menuitem"><a href="#menu">Menu</a></li>
+    <li role="menuitem"><a href="#delivery">Delivery</a></li>
+    <li role="menuitem"><a href="#visit">Visit</a></li>
+  </ul>
+  <button class="icon-btn"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M3 4h2l2 11h11l2-8H6" fill="none" stroke="#3b2a1a" stroke-width="2"/></svg></button>
+</header>
+
+<main>
+  <section class="hero">
+    <img src="bag.svg">
+    <div>
+      <h1>Orchard Coffee</h1>
+      <p class="muted">Small-batch roasts, delivered fresh every Tuesday.</p>
+      <button class="btn" onclick="openOffer()">Get 10% off</button>
+    </div>
+  </section>
+
+  <h4 id="menu">Fresh roasts this week</h4>
+  <div class="cards">
+    <div class="card">
+      <p class="name">Ember Blend</p>
+      <p class="muted">Dark roast with cocoa notes - $14</p>
+      <div class="btn" onclick="add('Ember Blend')">Add to cart</div>
+    </div>
+    <div class="card">
+      <p class="name">Meadow Light</p>
+      <p class="muted">Light roast with citrus notes - $16</p>
+      <div class="btn" onclick="add('Meadow Light')">Add to cart</div>
+    </div>
+  </div>
+  <div id="toast"></div>
+
+  <h2 id="delivery">Delivery</h2>
+  <button class="acc" onclick="toggleAcc()">Delivery details</button>
+  <div id="acc-body" hidden><p>Orders placed before noon ship the same day. Free over $30.</p></div>
+
+  <p>Want to know where our beans come from? <a href="#visit">Click here</a>.</p>
+
+  <h1>Stay in the loop</h1>
+  <form id="news" novalidate>
+    <input type="text" placeholder="Your name">
+    <input type="email" id="email" placeholder="Email address">
+    <button class="btn" type="submit">Subscribe</button>
+  </form>
+</main>
+
+<footer id="visit"><a href="#menu" tabindex="1">Contact us</a> | 12 Mill Lane</footer>
+
+<div class="modal" id="modal" hidden>
+  <div class="box">
+    <div class="close" onclick="closeOffer()">&times;</div>
+    <p class="name">10% off your first order</p>
+    <input id="m-email" placeholder="Email address">
+    <button class="btn" type="button" onclick="claim()">Claim offer</button>
+    <p id="m-msg"></p>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

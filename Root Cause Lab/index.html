@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accessibility Bug Lab - Broken vs Fixed</title>
+<style>
+  body{margin:0;font:16px/1.5 system-ui,sans-serif;color:#14213d;background:#eef2f7}
+  header,.pane{padding:1rem}
+  h1{margin:0 0 .25rem;font-size:1.6rem}
+  p{margin:.25rem 0}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;padding:0 1rem 1rem}
+  .pane{background:#fff;border:3px solid #8a94a6;border-radius:8px}
+  .pane.bad{border-color:#b00020} .pane.good{border-color:#17692f}
+  h2{margin:0;font-size:1.2rem}
+  iframe{width:100%;height:75vh;border:1px solid #8a94a6;margin-top:.5rem;background:#fff}
+  a{color:#0b5cad}
+  :focus-visible{outline:3px solid #0b5cad;outline-offset:2px}
+  @media(max-width:800px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <h1>Accessibility Bug Lab</h1>
+  <p>Left: 19 deliberate bugs. Right: the same page, fixed. Open each in its own tab to use DevTools properly. Read <code>BUGS.md</code> after you try to find them yourself.</p>
+</header>
+<main class="grid">
+  <section class="pane bad" aria-labelledby="b">
+    <h2 id="b">Broken version</h2>
+    <p><a href="broken/index.html" target="_blank" rel="noopener">Open in new tab</a></p>
+    <iframe src="broken/index.html" title="Broken demo site"></iframe>
+  </section>
+  <section class="pane good" aria-labelledby="f">
+    <h2 id="f">Fixed version</h2>
+    <p><a href="fixed/index.html" target="_blank" rel="noopener">Open in new tab</a></p>
+    <iframe src="fixed/index.html" title="Fixed demo site"></iframe>
+  </section>
+</main>
+</body>
+</html>
