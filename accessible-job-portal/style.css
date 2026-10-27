@@ -1,0 +1,107 @@
+:root {
+  --ink: #14213d;
+  --muted: #4a5568;
+  --line: #8a94a6;
+  --paper: #ffffff;
+  --wash: #eef2f7;
+  --brand: #0b5cad;
+  --error: #b00020;
+  --ok: #17692f;
+  --base: 100%;
+}
+* { box-sizing: border-box; }
+html { font-size: var(--base); }
+body {
+  margin: 0; background: var(--wash); color: var(--ink);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+}
+body.large { --base: 120%; }
+body.xlarge { --base: 140%; }
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+.skip-link {
+  position: absolute; left: 1rem; top: -4rem; background: var(--ink); color: #fff;
+  padding: .75rem 1rem; border-radius: 4px; z-index: 10;
+}
+.skip-link:focus { top: 1rem; }
+
+.site-header {
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+  padding: .75rem 1rem; background: var(--ink); color: #fff;
+}
+.brand { margin: 0; font-weight: 700; font-size: 1.1rem; }
+.tools { display: flex; gap: .4rem; }
+.size-btn {
+  min-width: 44px; min-height: 44px; border: 2px solid #fff; background: transparent;
+  color: #fff; border-radius: 6px; font: inherit; cursor: pointer;
+}
+.size-btn[aria-pressed="true"] { background: #fff; color: var(--ink); font-weight: 700; }
+
+main { max-width: 40rem; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
+h1 { font-size: 1.9rem; line-height: 1.2; margin: .5rem 0; }
+.intro { color: var(--muted); margin-top: 0; }
+.req-mark { color: var(--error); font-weight: 700; }
+
+.progress-bar { height: .6rem; background: #cfd6e2; border-radius: 99px; overflow: hidden; }
+.progress-bar span { display: block; height: 100%; width: 0; background: var(--ok); transition: width .3s; }
+#progress-text { margin: .3rem 0 1.25rem; font-size: .9rem; color: var(--muted); }
+
+fieldset {
+  background: var(--paper); border: 1px solid #c3cbd8; border-radius: 10px;
+  padding: 1rem 1.25rem 1.25rem; margin: 0 0 1.25rem;
+}
+legend { font-weight: 700; font-size: 1.15rem; padding: 0 .5rem; }
+.field { margin-top: 1rem; }
+label { display: block; font-weight: 600; margin-bottom: .25rem; }
+.hint, .count { margin: 0 0 .35rem; font-size: .9rem; color: var(--muted); }
+.count { margin: .25rem 0 0; }
+
+input[type="text"], input[type="email"], input[type="tel"], select, textarea {
+  width: 100%; min-height: 48px; padding: .6rem .75rem; font: inherit; color: var(--ink);
+  background: #fff; border: 2px solid var(--line); border-radius: 6px;
+}
+textarea { resize: vertical; }
+input[aria-invalid="true"], select[aria-invalid="true"] { border-color: var(--error); background: #fff5f6; }
+input.valid, select.valid { border-color: var(--ok); }
+
+.error { margin: .35rem 0 0; color: var(--error); font-weight: 600; font-size: .95rem; }
+.error:empty { display: none; }
+.error::before { content: "Error: "; }
+
+.check { display: grid; grid-template-columns: 1.6rem 1fr; gap: .25rem .6rem; align-items: start; }
+.check input { width: 1.5rem; height: 1.5rem; margin-top: .2rem; }
+.check label { font-weight: 400; margin: 0; }
+.check .error { grid-column: 2; }
+
+:focus-visible { outline: 3px solid #ffbf00; outline-offset: 2px; box-shadow: 0 0 0 5px var(--ink); }
+
+button.submit, #again {
+  min-height: 48px; padding: .75rem 1.5rem; font: inherit; font-weight: 700; cursor: pointer;
+  color: #fff; background: var(--brand); border: 2px solid var(--brand); border-radius: 6px;
+}
+button.submit:hover, #again:hover { background: #084a8c; }
+
+.error-summary {
+  background: #fff5f6; border: 3px solid var(--error); border-radius: 8px;
+  padding: 1rem 1.25rem; margin-bottom: 1.25rem;
+}
+.error-summary h2 { margin: 0 0 .5rem; font-size: 1.15rem; color: var(--error); }
+.error-summary ul { margin: 0; padding-left: 1.2rem; }
+.error-summary a { color: var(--error); font-weight: 600; }
+
+.success { background: #fff; border: 3px solid var(--ok); border-radius: 10px; padding: 1.5rem; }
+.success h2 { margin-top: 0; color: var(--ok); }
+[hidden] { display: none !important; }
+
+@media (max-width: 480px) {
+  h1 { font-size: 1.5rem; }
+  fieldset { padding: .75rem; }
+  button.submit { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; scroll-behavior: auto !important; }
+}

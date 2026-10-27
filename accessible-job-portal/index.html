@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Apply – Brightpath Labs Careers</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to application form</a>
+
+  <header class="site-header">
+    <p class="brand">Brightpath Labs</p>
+    <div class="tools" role="group" aria-label="Text size">
+      <button type="button" class="size-btn" data-size="normal" aria-pressed="true">A</button>
+      <button type="button" class="size-btn" data-size="large" aria-pressed="false">A+</button>
+      <button type="button" class="size-btn" data-size="xlarge" aria-pressed="false">A++</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <h1>Apply for a role</h1>
+    <p class="intro">Takes about 3 minutes. Fields marked <span class="req-mark" aria-hidden="true">*</span><span class="visually-hidden">with an asterisk</span> are required. You can fill this in using only your keyboard.</p>
+
+    <div class="progress" aria-hidden="true">
+      <div class="progress-bar"><span id="bar"></span></div>
+      <p id="progress-text">0 of 7 required fields complete</p>
+    </div>
+
+    <!-- Error summary: appears after a failed submit and receives focus -->
+    <div id="error-summary" class="error-summary" role="alert" tabindex="-1" hidden>
+      <h2 id="error-title"></h2>
+      <ul id="error-list"></ul>
+    </div>
+
+    <form id="apply-form" novalidate>
+      <fieldset>
+        <legend>Personal details</legend>
+
+        <div class="field">
+          <label for="name">Full name <span class="req-mark" aria-hidden="true">*</span></label>
+          <input id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-error">
+          <p class="error" id="name-error"></p>
+        </div>
+
+        <div class="field">
+          <label for="email">Email address <span class="req-mark" aria-hidden="true">*</span></label>
+          <p class="hint" id="email-hint">We'll send your confirmation here.</p>
+          <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-hint email-error">
+          <p class="error" id="email-error"></p>
+        </div>
+
+        <div class="field">
+          <label for="phone">Phone number <span class="req-mark" aria-hidden="true">*</span></label>
+          <p class="hint" id="phone-hint">10 digits. Spaces and dashes are fine.</p>
+          <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required aria-describedby="phone-hint phone-error">
+          <p class="error" id="phone-error"></p>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Education</legend>
+
+        <div class="field">
+          <label for="education">Highest qualification <span class="req-mark" aria-hidden="true">*</span></label>
+          <select id="education" name="education" required aria-describedby="education-error">
+            <option value="">Select one</option>
+            <option>High school</option>
+            <option>Diploma</option>
+            <option>Bachelor's degree</option>
+            <option>Master's degree</option>
+            <option>Doctorate</option>
+          </select>
+          <p class="error" id="education-error"></p>
+        </div>
+
+        <div class="field">
+          <label for="school">School or university <span class="req-mark" aria-hidden="true">*</span></label>
+          <input id="school" name="school" type="text" autocomplete="organization" required aria-describedby="school-error">
+          <p class="error" id="school-error"></p>
+        </div>
+
+        <div class="field">
+          <label for="year">Year of graduation <span class="req-mark" aria-hidden="true">*</span></label>
+          <p class="hint" id="year-hint">Expected year is fine if you're still studying.</p>
+          <input id="year" name="year" type="text" inputmode="numeric" maxlength="4" required aria-describedby="year-hint year-error">
+          <p class="error" id="year-error"></p>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>About you</legend>
+        <div class="field">
+          <label for="note">Why do you want to join us? (optional)</label>
+          <p class="hint" id="note-hint">Up to 300 characters.</p>
+          <textarea id="note" name="note" rows="4" maxlength="300" aria-describedby="note-hint note-count"></textarea>
+          <p class="count" id="note-count">300 characters left</p>
+        </div>
+
+        <div class="field check">
+          <input id="consent" name="consent" type="checkbox" required aria-describedby="consent-error">
+          <label for="consent">I agree that Brightpath Labs may store my details for this application. <span class="req-mark" aria-hidden="true">*</span></label>
+          <p class="error" id="consent-error"></p>
+        </div>
+      </fieldset>
+
+      <button type="submit" class="submit">Submit application</button>
+    </form>
+
+    <section id="success" class="success" tabindex="-1" hidden>
+      <h2>Application received</h2>
+      <p id="success-msg"></p>
+      <button type="button" id="again">Start a new application</button>
+    </section>
+  </main>
+
+  <!-- Polite announcements for screen readers -->
+  <p id="status" class="visually-hidden" role="status" aria-live="polite"></p>
+
+  <script src="script.js"></script>
+</body>
+</html>
